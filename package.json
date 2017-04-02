@@ -18,6 +18,9 @@
   "homepage": "https://github.com/Roadagain/superluminal-reversi#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-cli": "^1.2.2"
+    "gulp-cli": "^1.2.2",
+    "gulp-typescript": "^3.1.6",
+    "gulpfile.ts": "0.0.2",
+    "typescript": "^2.2.2"
   }
 }
