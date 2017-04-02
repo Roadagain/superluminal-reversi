@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*",
-    "gulpfile.ts"
+    "gulpclass.ts"
   ],
   "exclude": [
     "node_modules"
