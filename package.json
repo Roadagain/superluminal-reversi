@@ -4,6 +4,7 @@
   "description": "超☆超☆光☆速☆反☆転☆最☆速!!! スピード★スター★かなで",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
