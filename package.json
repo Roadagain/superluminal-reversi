@@ -1,0 +1,19 @@
+{
+  "name": "superluminal-reversi",
+  "version": "0.0.1",
+  "description": "超☆超☆光☆速☆反☆転☆最☆速!!! スピード★スター★かなで",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roadagain/superluminal-reversi.git"
+  },
+  "author": "Roadagain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Roadagain/superluminal-reversi/issues"
+  },
+  "homepage": "https://github.com/Roadagain/superluminal-reversi#readme"
+}
