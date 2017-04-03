@@ -39,3 +39,7 @@ jspm_packages
 
 # Directory for typings
 typings
+
+# Source for gulp
+gulpclass.js
+gulpclass.js.map
