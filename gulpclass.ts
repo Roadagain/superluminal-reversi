@@ -11,19 +11,18 @@ const tsconfig = require("./tsconfig.json");
 @Gulpclass()
 export class Gulpfile {
 
-  @Task()
+  @Task("default", ["typescript"])
   default() {
-    return ["test"];
   }
 
-  @Task()
+  @Task("typescript")
   typescript() {
     return gulp.src(tsconfig.include)
       .pipe(tsc(tsconfig.compilerOptions))
       .pipe(gulp.dest(tsconfig.compilerOptions.outDir));
   }
 
-  @Task()
+  @Task("test")
   test() {
     return console.log("executing a test task...");
   }
