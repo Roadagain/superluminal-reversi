@@ -35,3 +35,14 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+
+# Directory for typings
+typings
+
+# Source for gulp
+gulpclass.js
+gulpclass.js.map
+
+# Directory for gulp
+dest

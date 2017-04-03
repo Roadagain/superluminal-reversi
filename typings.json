@@ -1,0 +1,11 @@
+{
+  "name": "superluminal-reversi",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "registry:npm/express#4.14.0+20170217205433"
+  },
+  "globalDevDependencies": {
+    "socket.io": "registry:dt/socket.io#1.4.4+20170313110830",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20161116080703"
+  }
+}
