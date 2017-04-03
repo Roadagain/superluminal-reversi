@@ -1,5 +1,5 @@
 /// <reference path="./typings/index.d.ts" />
-declare function require(x: string): any;
+/// <reference types="node" />
 
 import {Gulpclass, Task} from "gulpclass/Decorators";
 
