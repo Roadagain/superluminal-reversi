@@ -5,6 +5,8 @@ import {Gulpclass, Task} from "gulpclass/Decorators";
 import * as gulp from "gulp";
 import * as tsc from "gulp-typescript";
 
+const tsconfig = require("./tsconfig.json");
+
 @Gulpclass()
 export class Gulpfile {
 
