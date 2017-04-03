@@ -7,7 +7,6 @@
     "gulp-typescript": "registry:dt/gulp-typescript#0.0.0+20160720002434"
   },
   "globalDevDependencies": {
-    "node": "registry:dt/node#7.0.0+20170322231424",
     "socket.io": "registry:dt/socket.io#1.4.4+20170313110830",
     "socket.io-client": "registry:dt/socket.io-client#1.4.4+20161116080703"
   }

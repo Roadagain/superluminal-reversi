@@ -10,8 +10,7 @@
     "outDir": "dest"
   },
   "include": [
-    "src/**/*.ts",
-    "gulpclass.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
