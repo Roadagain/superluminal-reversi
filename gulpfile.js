@@ -9,7 +9,3 @@ gulp.task("typescript", () => {
     .pipe(tsc(tsconfig.compilerOptions))
     .pipe(gulp.dest(tsconfig.compilerOptions.outDir));
 });
-
-gulp.task("test", () => {
-  return console.log("executing a test task...");
-});
