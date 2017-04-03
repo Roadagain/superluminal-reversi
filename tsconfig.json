@@ -6,7 +6,7 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "removeComments": true,
-    "types": ["node"],
+    "moduleResolution": "node",
     "outDir": "dest"
   },
   "include": [
