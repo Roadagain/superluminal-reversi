@@ -6,8 +6,7 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "removeComments": true,
-    "moduleResolution": "node",
-    "outDir": "dest"
+    "moduleResolution": "node"
   },
   "include": [
     "src/**/*.ts"
