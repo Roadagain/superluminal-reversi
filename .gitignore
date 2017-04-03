@@ -43,3 +43,6 @@ typings
 # Source for gulp
 gulpclass.js
 gulpclass.js.map
+
+# Directory for gulp
+dest
