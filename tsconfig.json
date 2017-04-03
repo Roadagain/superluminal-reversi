@@ -9,7 +9,7 @@
     "outDir": "dest"
   },
   "include": [
-    "src/**/*",
+    "src/**/*.ts",
     "gulpclass.ts"
   ],
   "exclude": [
