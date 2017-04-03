@@ -1,7 +1,7 @@
 const gulp = require("gulp");
-const tsc = require("gulp-typescript");
+const ts = require("gulp-typescript");
 const outDir = "dest";
-let tsProject = tsc.createProject("./tsconfig.json");
+let tsProject = ts.createProject("./tsconfig.json");
 
 gulp.task("default", ["typescript"]);
 
