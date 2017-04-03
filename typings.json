@@ -2,6 +2,7 @@
   "name": "superluminal-reversi",
   "dependencies": {},
   "devDependencies": {
+    "express": "registry:npm/express#4.14.0+20170217205433",
     "gulp": "registry:npm/gulp#4.0.0-alpha.2+20160817105618"
   },
   "globalDevDependencies": {
