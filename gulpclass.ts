@@ -2,7 +2,7 @@
 
 import {Gulpclass, Task} from "gulpclass/Decorators";
 
-let gulp = require("gulp");
+import * as gulp from "gulp";
 
 @Gulpclass()
 export class Gulpfile {
