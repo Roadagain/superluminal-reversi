@@ -1,22 +1,26 @@
-let express = require("express");
+/// <reference path="../typings/index.d.ts" />
+
+import * as express from "express";
 let app = express();
-let http = require("http").Server(app);
-let io = require("socket.io")(http);
-let Runner = require("./runner");
-let reversi = require("./reversi");
+let http = require("http");
+let server = http.Server(app);
+import * as socketio from "socket.io";
+let io = socketio(server);
+import Runner from "./runner";
+import * as reversi from "./reversi";
 
 const PORT = 8000;
 
 app.use(express.static("../client"));
 
-app.get("/", (req, res) => {
+app.get("/", (req:any, res:any) => {
   res.sendfile("index.html");
 });
 
-let black = null;
-let white = null;
+let black:Runner = null;
+let white:Runner = null;
 
-function color(id) {
+function color(id:string) {
   if (black !== null && black.id === id) {
     return black;
   }
@@ -53,9 +57,9 @@ io.on("connection", socket => {
     else {
       console.log("white is ready");
     }
-    c.ready = true;
+    c = new Runner(c.id, c.num, true);
 
-    if (black !== null && black.isReady() && white !== null && white.isReady()) {
+    if (black !== null && black.ready && white !== null && white.ready) {
       io.sockets.emit("start");
       let matrix = reversi.start();
       io.sockets.emit("update", matrix);
@@ -77,9 +81,9 @@ io.on("connection", socket => {
     }
   });
 
-  socket.on("put", (point) => {
+  socket.on("put", (point:reversi.Point) => {
     let c = color(socket.id);
-    if (c === null || black.isReady() !== true || white.isReady() !== true) {
+    if (c === null || black.ready !== true || white.ready !== true) {
       return;
     }
 
@@ -101,6 +105,6 @@ io.on("connection", socket => {
   });
 });
 
-http.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log("listening on %d...", PORT);
 });
