@@ -1,10 +1,10 @@
-const SIDE = 8;
-const WHITE = -1;
-const EMPTY = 0;
-const BLACK = 1;
+export const SIDE = 8;
+export const WHITE = -1;
+export const EMPTY = 0;
+export const BLACK = 1;
 const DXY = [-1, 0, 1];
 
-interface Point {
+export interface Point {
   y:number;
   x:number;
 }
