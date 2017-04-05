@@ -38,3 +38,6 @@ jspm_packages
 
 # Directory for typings
 typings/
+
+# Directory for tranpiled scripts
+build/
