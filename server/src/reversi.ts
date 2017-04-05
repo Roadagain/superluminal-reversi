@@ -1,14 +1,23 @@
-"use strict";
-
-const SIDE = 8;
-const WHITE = -1;
-const EMPTY = 0;
-const BLACK = 1;
+export const SIDE = 8;
+export const WHITE = -1;
+export const EMPTY = 0;
+export const BLACK = 1;
 const DXY = [-1, 0, 1];
 
-let matrix = null;
+export interface Point {
+  y:number;
+  x:number;
+}
 
-function start() {
+interface ReversePoint {
+  rp:Point;
+  dy:number;
+  dx:number;
+}
+
+let matrix:number[][] = null;
+
+export function start() {
   matrix = [];
   for (let i = 0; i < SIDE + 2; ++i) {
     matrix.push([]);
@@ -24,13 +33,13 @@ function start() {
   return matrix;
 }
 
-function inBoard(point) {
+function inBoard(point:Point) {
   let x = point.x;
   let y = point.y;
   return 0 < x && x <= SIDE && 0 < y && y <= SIDE;
 }
 
-function reversePoint(point, dy, dx, color) {
+function reversePoint(point:Point, dy:number, dx:number, color:number):Point {
   let x = point.x;
   let y = point.y;
   let reversed = false;
@@ -56,7 +65,7 @@ function reversePoint(point, dy, dx, color) {
   return null;
 }
 
-function reversePoints(point, color) {
+function reversePoints(point:Point, color:number):ReversePoint[] {
   if (color !== BLACK && color !== WHITE) {
     return [];
   }
@@ -67,7 +76,7 @@ function reversePoints(point, color) {
     return [];
   }
 
-  let rPoints = [];
+  let rPoints:{rp:Point, dy:number, dx:number}[] = [];
   for (let i = 0; i < 3; ++i) {
     for (let j = 0; j < 3; ++j) {
       let dy = DXY[i];
@@ -86,8 +95,8 @@ function reversePoints(point, color) {
   return rPoints;
 }
 
-function reverse(point, color, rps) {
-  rps.forEach((v, i) => {
+function reverse(point:Point, color:number, rps:ReversePoint[]) {
+  rps.forEach((v:{rp:Point, dy:number, dx:number}, i:number) => {
     let rp = v.rp;
     while (rp.x !== point.x || rp.y !== point.y) {
       matrix[rp.y][rp.x] = color;
@@ -97,7 +106,7 @@ function reverse(point, color, rps) {
   });
 }
 
-function put(point, color) {
+export function put(point:Point, color:number):number[][] {
   let rps = reversePoints(point, color);
   if (rps.length === 0) {
     return null;
@@ -109,7 +118,7 @@ function put(point, color) {
   return matrix;
 }
 
-function isFinish() {
+export function isFinish() {
   for (let i = 1; i <= SIDE; ++i) {
     for (let j = 1; j <= SIDE; ++j) {
       let brps = reversePoints({y: i, x: j}, BLACK);
@@ -123,9 +132,9 @@ function isFinish() {
   return true;
 }
 
-function result() {
-  let bcnt = 0;
-  let wcnt = 0;
+export function result():{winner:string, bcnt:number, wcnt:number} {
+  let bcnt: number = 0;
+  let wcnt: number = 0;
 
   for (let i = 1; i <= SIDE; ++i) {
     for (let j = 1; j <= SIDE; ++j) {
@@ -141,14 +150,3 @@ function result() {
   let winner = bcnt > wcnt ? "Black" : "White";
   return {winner, bcnt, wcnt};
 }
-
-module.exports = {
-  start,
-  put,
-  isFinish,
-  result,
-  SIDE,
-  WHITE,
-  EMPTY,
-  BLACK,
-};
