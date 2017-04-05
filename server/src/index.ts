@@ -53,11 +53,12 @@ io.on("connection", socket => {
 
     if (c === black) {
       console.log("black is ready");
+      black = new Runner(socket.id, reversi.BLACK, true);
     }
     else {
       console.log("white is ready");
+      white = new Runner(socket.id, reversi.WHITE, true);
     }
-    c = new Runner(c.id, c.num, true);
 
     if (black !== null && black.ready && white !== null && white.ready) {
       io.sockets.emit("start");
