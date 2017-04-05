@@ -8,5 +8,5 @@ gulp.task("default", ["typescript"]);
 gulp.task("typescript", () => {
   return tsProject.src()
     .pipe(tsProject())
-    .js.pipe(gulp.dest("dest"));
+    .js.pipe(gulp.dest("build"));
 });
