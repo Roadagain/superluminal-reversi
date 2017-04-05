@@ -12,6 +12,7 @@
   "devDependencies": {
     "express": "^4.15.2",
     "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
     "gulp-typescript": "^3.1.6",
     "socket.io": "^1.7.3",
     "typescript": "^2.2.2"
